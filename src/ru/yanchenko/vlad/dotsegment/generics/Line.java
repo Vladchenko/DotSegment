@@ -15,14 +15,14 @@ import java.awt.geom.Line2D;
  */
 public class Line {
     
-    Dot dot1 = new Dot();
-    Dot dot2 = new Dot();
+    private Dot dot1 = new Dot();
+    private Dot dot2 = new Dot();
     // Perpendicular line #1
-    Dot dot1p = new Dot();
-    Dot dot2p = new Dot();
+    private Dot dot1p = new Dot();
+    private Dot dot2p = new Dot();
     // Perpendicular line #2
-    Dot dot3p = new Dot();
-    Dot dot4p = new Dot();
+    private Dot dot3p = new Dot();
+    private Dot dot4p = new Dot();
     Shape shp;
     
     public Line() { }
@@ -80,4 +80,54 @@ public class Line {
     public void computePerpendicularDots(double x1, double y1) {
         
     }
+
+    //<editor-fold defaultstate="collapsed" desc="getters & setters">
+    public Dot getDot1() {
+        return dot1;
+    }
+    
+    public void setDot1(Dot dot1) {
+        this.dot1 = dot1;
+    }
+    
+    public Dot getDot2() {
+        return dot2;
+    }
+    
+    public void setDot2(Dot dot2) {
+        this.dot2 = dot2;
+    }
+    
+    public Dot getDot1p() {
+        return dot1p;
+    }
+    
+    public void setDot1p(Dot dot1p) {
+        this.dot1p = dot1p;
+    }
+    
+    public Dot getDot2p() {
+        return dot2p;
+    }
+    
+    public void setDot2p(Dot dot2p) {
+        this.dot2p = dot2p;
+    }
+    
+    public Dot getDot3p() {
+        return dot3p;
+    }
+    
+    public void setDot3p(Dot dot3p) {
+        this.dot3p = dot3p;
+    }
+    
+    public Dot getDot4p() {
+        return dot4p;
+    }
+    
+    public void setDot4p(Dot dot4p) {
+        this.dot4p = dot4p;
+    }
+//</editor-fold>
 }
