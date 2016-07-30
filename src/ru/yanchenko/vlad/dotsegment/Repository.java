@@ -98,7 +98,7 @@ public class Repository {
     //** In charge of an actual file that is to hold an image of a ball.
     private File fileImg;
     
-    private Segment segment = new Segment(100,100,600,600);
+    private Segment segment = new Segment(1000,400,800,600);
     private Line line = new Line();
     private Dot dot = new Dot(300,300,false);
     //</editor-fold>
