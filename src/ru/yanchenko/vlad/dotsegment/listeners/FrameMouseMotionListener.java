@@ -35,11 +35,7 @@ public class FrameMouseMotionListener implements MouseMotionListener {
                 oRepository.getSegment().getDot2().setX(e.getX());
                 oRepository.getSegment().getDot2().setY(e.getY());
             }
-            oRepository.getLine().computeDots(
-                    oRepository.getSegment().getDot1().getX(),
-                    oRepository.getSegment().getDot1().getY(),
-                    oRepository.getSegment().getDot2().getX(),
-                    oRepository.getSegment().getDot2().getY());
+
         }
 
         //<editor-fold defaultstate="collapsed" desc="When CTRL is pressed">
@@ -48,6 +44,15 @@ public class FrameMouseMotionListener implements MouseMotionListener {
             oRepository.getDot().setY(e.getY());
         }
         //</editor-fold>
+
+        oRepository.getLine().computeDots(
+                oRepository.getSegment().getDot1().getX(),
+                oRepository.getSegment().getDot1().getY(),
+                oRepository.getSegment().getDot2().getX(),
+                oRepository.getSegment().getDot2().getY(),
+                oRepository.getDot().getX(),
+                oRepository.getDot().getY()
+        );
 
     }
 

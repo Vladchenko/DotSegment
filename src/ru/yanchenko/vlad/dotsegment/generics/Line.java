@@ -5,6 +5,7 @@
  */
 package ru.yanchenko.vlad.dotsegment.generics;
 
+import java.awt.Color;
 import java.awt.Graphics2D;
 import java.awt.Shape;
 import java.awt.geom.Line2D;
@@ -23,6 +24,10 @@ public class Line {
     // Perpendicular line #2
     private Dot dot3p = new Dot();
     private Dot dot4p = new Dot();
+    // Dot for a line representing a shortest distance
+    private Dot dot5 = new Dot();
+    // Subject dot
+    private Dot dot6 = new Dot();
     Shape shp;
     
     public Line() { }
@@ -42,11 +47,16 @@ public class Line {
         g2.draw(shp);
         shp = new Line2D.Double(dot3p.x, dot3p.y, dot4p.x, dot4p.y);
         g2.draw(shp);
+        g2.setColor(new Color(150,150,255));
+        shp = new Line2D.Double(dot5.x, dot5.y, dot6.x, dot6.y);
+        g2.draw(shp);
     }
     
-    public void computeDots(double x1, double y1, double x2, double y2) {
+    public void computeDots(double x1, double y1, double x2, double y2, double x3, double y3) {
         
         double y;
+        dot6.setX(x3);
+        dot6.setY(y3);
         
         Dot dot = new Dot();
         y = (0 - x1) / (x2 - x1) * (y2 - y1) + y1;
@@ -74,6 +84,34 @@ public class Line {
         
         dot4p.setX(1920);
         dot4p.y = y2 - (dot4p.getX() - x2) * (x2 - x1) / (y2 - y1);
+        
+        
+        // Checking if a subject dot is within a perpendicular lines
+        
+//        dot5.setX(dot6.getX());
+//        dot5.setY(y2 - (dot6.getY() - x2) * (x2 - x1) / (y2 - y1));
+//        
+//        dot5.setX(dot6.getX());
+//        dot5.setY(y1 - (dot6.getY() - x1) * (x2 - x1) / (y2 - y1));
+        
+        double distance1 = Math.sqrt(
+                Math.pow(x1 - x3, 2)
+                + Math.pow(y1 - y3, 2)
+        );
+        double distance2 = Math.sqrt(
+                Math.pow(x2 - x3, 2)
+                + Math.pow(y2 - y3, 2)
+        );
+//        System.out.println(distance1 + " " + distance2);
+        if (distance1 < distance2) {
+            dot5.setX(x1); 
+            dot5.setY(y1);
+        } else if (distance1 > distance2) {
+            dot5.setX(x2); 
+            dot5.setY(y2);
+        } else if (distance1 == distance2) {
+            
+        }
         
     }
     

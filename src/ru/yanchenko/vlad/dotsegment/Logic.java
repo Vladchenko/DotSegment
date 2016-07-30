@@ -4,6 +4,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.Date;
 import javax.swing.Timer;
+import ru.yanchenko.vlad.dotsegment.generics.Dot;
 
 //** This class is in charge of a logic of a program */
 public class Logic {
@@ -64,6 +65,17 @@ public class Logic {
         }
 
         return new Timer(0, new TimerImpl());
+    }
+    
+    // Computing a position that is 
+    private Dot computeDotAtSegment(Dot dot) {
+        
+        // If a Dot is placed between the perpendiculars of a segment, then a 
+        // new Dot is computed by computing a height of a triangle, else 
+        
+        
+        
+        return new Dot();
     }
 
 }

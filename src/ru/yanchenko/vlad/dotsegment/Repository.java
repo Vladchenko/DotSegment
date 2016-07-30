@@ -187,7 +187,9 @@ public class Repository {
                 oRepository.getSegment().getDot1().getX(), 
                 oRepository.getSegment().getDot1().getY(), 
                 oRepository.getSegment().getDot2().getX(), 
-                oRepository.getSegment().getDot2().getY());
+                oRepository.getSegment().getDot2().getY(),
+                oRepository.getDot().getX(),
+                oRepository.getDot().getY() );
         
 //        oRepository.getDot().setX(800);
 //        oRepository.getDot().setY(900);
