@@ -29,23 +29,23 @@ public class FrameMouseListener implements MouseListener {
     public void mousePressed(MouseEvent e) {
 
         //<editor-fold defaultstate="collapsed" desc="No ALT / CTRL / SHIFT keys pressed">
-        if (!oRepository.isKeyAlt()
-                && !oRepository.isKeyCtrl()
-                && !oRepository.isKeyShift()) {
-            if (e.getButton()== MouseEvent.BUTTON1) {
-                oRepository.getSegment().getDot1().setX(e.getX());
-                oRepository.getSegment().getDot1().setY(e.getY());
-            }
-            if (e.getButton() == MouseEvent.BUTTON3) {
-                oRepository.getSegment().getDot2().setX(e.getX());
-                oRepository.getSegment().getDot2().setY(e.getY());
-            }
-            oRepository.getLine().computeDots(
-                        oRepository.getSegment().getDot1().getX(), 
-                        oRepository.getSegment().getDot1().getY(), 
-                        oRepository.getSegment().getDot2().getX(), 
-                        oRepository.getSegment().getDot2().getY());
-        }
+//        if (!oRepository.isKeyAlt()
+//                && !oRepository.isKeyCtrl()
+//                && !oRepository.isKeyShift()) {
+//            if (e.getButton()== MouseEvent.BUTTON1) {
+//                oRepository.getSegment().getDot1().setX(e.getX());
+//                oRepository.getSegment().getDot1().setY(e.getY());
+//            }
+//            if (e.getButton() == MouseEvent.BUTTON3) {
+//                oRepository.getSegment().getDot2().setX(e.getX());
+//                oRepository.getSegment().getDot2().setY(e.getY());
+//            }
+//            oRepository.getLine().computeDots(
+//                        oRepository.getSegment().getDot1().getX(), 
+//                        oRepository.getSegment().getDot1().getY(), 
+//                        oRepository.getSegment().getDot2().getX(), 
+//                        oRepository.getSegment().getDot2().getY());
+//        }
         //</editor-fold>
 
         //<editor-fold defaultstate="collapsed" desc="When CTRL is pressed">
