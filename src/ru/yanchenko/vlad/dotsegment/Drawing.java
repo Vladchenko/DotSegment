@@ -50,33 +50,36 @@ public class Drawing extends JPanel {
             (int) oRepository.getLines().getPerpendicular2().getDot2().getY(),
             (int) oRepository.getLines().getPerpendicular().getDot2().getY()};
 
-        g.setColor(new Color(2,20,2));
-        g.fillPolygon(xPoints, yPoints, 4);        
-
         g2.setRenderingHint(RenderingHints.KEY_ANTIALIASING,
                 RenderingHints.VALUE_ANTIALIAS_ON);
 
+        g.setColor(new Color(2,20,2));
+        g.fillPolygon(xPoints, yPoints, 4);        
+
         g.setColor(Color.GRAY);
         oRepository.getLines().drawLines(g2);
+        drawSubjectDot(g2);
+        drawSector(g2);
+    }
 
+    private void drawSubjectDot(Graphics2D g2) {
         if (oRepository.getLines().isInside()) {
-            g.setColor(Color.GREEN);
+            g2.setColor(Color.GREEN);
             oRepository.getDot().drawDot(g2, 8);
         } else {
-            g.setColor(Color.RED);
+            g2.setColor(Color.RED);
             oRepository.getDot().drawDot(g2, 4);
         }
+    }
 
+    // Drawing a sector between a perpendicular lines
+    private void drawSector(Graphics2D g2) {
         float[] dash2 = {1000f, 0f};
         g2.setStroke(
                 new BasicStroke(4, BasicStroke.CAP_ROUND,
                         BasicStroke.JOIN_ROUND, 0.0f, dash2, 0f)
         );
-
-        g.setColor(Color.green);
+        g2.setColor(Color.green);
         oRepository.getSegment().drawSegment(g2);
-
-
-
     }
 }

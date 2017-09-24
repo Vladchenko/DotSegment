@@ -34,14 +34,6 @@ public class Lines {
     public Lines() {
     }
 
-//    public Lines(double x1, double y1, double x2, double y2) {
-//        dot1.x = x1;
-//        dot1.y = y1;
-//        dot2.x = x2;
-//        dot2.y = y2;
-//        shp = new Line2D.Double(dot1.x, dot1.y, dot2.x, dot2.y);
-//    }
-
     public void drawLines(Graphics2D g2) {
         // Lines through segment
         drawLine2D(g2, lineThroughSegment.getDot1().getX(),
@@ -59,11 +51,6 @@ public class Lines {
                 perpendicular2.getDot2().getX(),
                 perpendicular2.getDot2().getY());
         g2.setColor(new Color(50, 30, 30));
-        float[] dash2 = {5f, 8f};
-        g2.setStroke(
-                new BasicStroke(2, BasicStroke.CAP_ROUND,
-                        BasicStroke.JOIN_ROUND, 6.0f, dash2, 0f)
-        );
         // Lines from subject dot to a closest segment dot
         drawLine2DDashed(g2, dot5.x, dot5.y, dotSubject.x, dotSubject.y);
     }

@@ -211,10 +211,7 @@ public class Repository {
                 oRepository.getLines().getPerpendicular2().getDot2().getX(),
                 oRepository.getLines().getPerpendicular2().getDot2().getY()
         );
-        
-//        oRepository.getDot().setX(800);
-//        oRepository.getDot().setY(900);
-        
+
         //** Hiding mouse cursor
 //        oRepository.getoDrawing().setCursor(
 //                    oRepository.getoDrawing().getToolkit().createCustomCursor(
