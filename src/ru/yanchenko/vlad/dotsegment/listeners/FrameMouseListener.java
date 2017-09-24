@@ -40,7 +40,7 @@ public class FrameMouseListener implements MouseListener {
 //                oRepository.getSegment().getDot2().setX(e.getX());
 //                oRepository.getSegment().getDot2().setY(e.getY());
 //            }
-//            oRepository.getLine().computeDots(
+//            oRepository.getLines().computeDots(
 //                        oRepository.getSegment().getDot1().getX(), 
 //                        oRepository.getSegment().getDot1().getY(), 
 //                        oRepository.getSegment().getDot2().getX(), 

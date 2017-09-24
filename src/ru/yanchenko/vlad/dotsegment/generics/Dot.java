@@ -12,6 +12,9 @@ public class Dot {
     //** y ordinate of a dot (to represent it on a screen)
     protected double y = 0;
 
+    public Dot() {
+    }
+
     /**
      * Defining a coordinate of a Dot randomly or directly assigning the values
      */
@@ -39,15 +42,10 @@ public class Dot {
             this.x = x;
             this.y = y;
         }
-//        shp = new Line2D.Double(x, y, x, y);
     }
 
-    public Dot() {
-//        shp = new Point2D.Double(300, 300);
-    }
-
-    public void drawDot(Graphics2D g2) {
-        g2.drawOval((int)this.x, (int)this.y, 2, 2);
+    public void drawDot(Graphics2D g2, int size) {
+        g2.fillOval((int)this.x - size / 2, (int)this.y - size / 2, size, size);
     }
 
     //<editor-fold defaultstate="collapsed" desc="Setters & Getters">

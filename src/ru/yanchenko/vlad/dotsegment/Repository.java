@@ -12,7 +12,7 @@ import javax.swing.Timer;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import ru.yanchenko.vlad.dotsegment.generics.Dot;
-import ru.yanchenko.vlad.dotsegment.generics.Line;
+import ru.yanchenko.vlad.dotsegment.generics.Lines;
 import ru.yanchenko.vlad.dotsegment.generics.Segment;
 import ru.yanchenko.vlad.dotsegment.listeners.FrameKeyListener;
 import ru.yanchenko.vlad.dotsegment.listeners.FrameMouseListener;
@@ -99,7 +99,7 @@ public class Repository {
     private File fileImg;
     
     private Segment segment = new Segment(1000,400,800,600);
-    private Line line = new Line();
+    private Lines lines = new Lines();
     private Dot dot = new Dot(300,300,false);
     //</editor-fold>
 
@@ -182,14 +182,35 @@ public class Repository {
                 oRepository.getClrWindowBackground()
         );
         
-        // Initializing a line
-        oRepository.getLine().computeDots(
+        // Initializing a lines
+        oRepository.getLines().computeDots(
                 oRepository.getSegment().getDot1().getX(), 
                 oRepository.getSegment().getDot1().getY(), 
                 oRepository.getSegment().getDot2().getX(), 
                 oRepository.getSegment().getDot2().getY(),
                 oRepository.getDot().getX(),
                 oRepository.getDot().getY() );
+
+        oRepository.getLines().computePerpendicularDots(
+                oRepository.getSegment().getDot1().getX(),
+                oRepository.getSegment().getDot1().getY(),
+                oRepository.getSegment().getDot2().getX(),
+                oRepository.getSegment().getDot2().getY()
+        );
+
+        oRepository.getLines().computeDotToLine1Distance(
+                oRepository.getLines().getPerpendicular().getDot1().getX(),
+                oRepository.getLines().getPerpendicular().getDot1().getY(),
+                oRepository.getLines().getPerpendicular().getDot2().getX(),
+                oRepository.getLines().getPerpendicular().getDot2().getY()
+        );
+
+        oRepository.getLines().computeDotToLine2Distance(
+                oRepository.getLines().getPerpendicular2().getDot1().getX(),
+                oRepository.getLines().getPerpendicular2().getDot1().getY(),
+                oRepository.getLines().getPerpendicular2().getDot2().getX(),
+                oRepository.getLines().getPerpendicular2().getDot2().getY()
+        );
         
 //        oRepository.getDot().setX(800);
 //        oRepository.getDot().setY(900);
@@ -212,12 +233,12 @@ public class Repository {
         this.segment = segment;
     }
 
-    public Line getLine() {
-        return line;
+    public Lines getLines() {
+        return lines;
     }
 
-    public void setLine(Line line) {
-        this.line = line;
+    public void setLines(Lines lines) {
+        this.lines = lines;
     }
 
     public Dot getDot() {

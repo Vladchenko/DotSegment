@@ -45,7 +45,7 @@ public class FrameMouseMotionListener implements MouseMotionListener {
         }
         //</editor-fold>
 
-        oRepository.getLine().computeDots(
+        oRepository.getLines().computeDots(
                 oRepository.getSegment().getDot1().getX(),
                 oRepository.getSegment().getDot1().getY(),
                 oRepository.getSegment().getDot2().getX(),
@@ -53,6 +53,29 @@ public class FrameMouseMotionListener implements MouseMotionListener {
                 oRepository.getDot().getX(),
                 oRepository.getDot().getY()
         );
+
+        oRepository.getLines().computePerpendicularDots(
+                oRepository.getSegment().getDot1().getX(),
+                oRepository.getSegment().getDot1().getY(),
+                oRepository.getSegment().getDot2().getX(),
+                oRepository.getSegment().getDot2().getY()
+        );
+
+        oRepository.getLines().computeDotToLine1Distance(
+                oRepository.getLines().getPerpendicular().getDot1().getX(),
+                oRepository.getLines().getPerpendicular().getDot1().getY(),
+                oRepository.getLines().getPerpendicular().getDot2().getX(),
+                oRepository.getLines().getPerpendicular().getDot2().getY()
+        );
+
+        oRepository.getLines().computeDotToLine2Distance(
+                oRepository.getLines().getPerpendicular2().getDot1().getX(),
+                oRepository.getLines().getPerpendicular2().getDot1().getY(),
+                oRepository.getLines().getPerpendicular2().getDot2().getX(),
+                oRepository.getLines().getPerpendicular2().getDot2().getY()
+        );
+
+        oRepository.getLines().checkSectorBelonging();
 
     }
 
